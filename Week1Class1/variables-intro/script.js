@@ -34,7 +34,6 @@ const triangleHeightLength = 5;
 // Your code here.
 let triangleArea = (triangleBaseLength * triangleHeightLength) / 2;
 
-
 console.log("Triangle Area is " + triangleArea); // should print "10"
 
 //MEDIUM REQUIREMENTS
@@ -64,7 +63,6 @@ b = c;
 
 console.log(a); // should print "A"
 console.log(b); // should print "B"
-
 
 //MEDIUM REQUIREMENTS 3
 let value = 1;
@@ -133,4 +131,4 @@ function isOdd(givenNumber) {
 
   console.log(isOdd(10));
 
-  console.log("The End")
+  console.log("The End");
