@@ -1,6 +1,6 @@
 'use strict'
 // Please don't delete the 'use strict' line above
-
+// WEEK 1 CLASS 1
 const name = "Carlos";
 let age = 10;
 let currentTask = "Programming";
@@ -132,3 +132,5 @@ function isOdd(givenNumber) {
   console.log(isOdd(10));
 
   console.log("The End");
+
+  // END OF WEEK 1 CLASS 1
