@@ -8,12 +8,10 @@ console.log(6 + 6);
 
 function add(numOne, numTwo) {
     return numOne + numTwo;
-  }
-  
+  }  
   // Tests
   console.log(add(4, 3)); // should return 7
   console.log(add(100, 42)); // => 142
-
 
   // 2 For the above function, what happens if you give only one input? What happens if you give more than the specified number of inputs?
 console.log(add(100)); // What happens? //NaN
