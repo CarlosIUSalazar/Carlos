@@ -75,8 +75,6 @@ function isEven(n){
         return false;
     }
 }
-
-
 // Write a function validCredentials that accepts two parameters: username and password, and returns true if both 
 //are long enough, and false otherwise. You can decide what constitutes “long enough”.
 
@@ -88,8 +86,6 @@ function validCredentials(username,password){
         return false;
     }
 }
-
-
 // ADVANCED REQUIREMENTS
 // For these exercises, you may need to use techniques that we haven’t covered in class.
 
