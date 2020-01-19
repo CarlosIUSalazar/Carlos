@@ -55,7 +55,6 @@ function isOfAge(number){
         return false;
     }
 }
-
 console.log("Is 18 old enouh to drink in Japan? " + isOfAge(18));
 
 // MEDIUM REQUIREMENTS
@@ -65,9 +64,7 @@ console.log("Is 18 old enouh to drink in Japan? " + isOfAge(18));
 //enough to drink. It should still return a boolean.
 //done!
 
-
 // Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise.
-
 function isEven(n){
     if (n % 2 === 0){
         return true;
