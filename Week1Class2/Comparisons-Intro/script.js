@@ -59,7 +59,6 @@ console.log("Is 18 old enouh to drink in Japan? " + isOfAge(18));
 
 // MEDIUM REQUIREMENTS
 // These exercises may require some research in order to complete.
-
 // Amend your isOfAge function to print a string to the console that describes whether or not that person is old 
 //enough to drink. It should still return a boolean.
 //done!
