@@ -1,0 +1,20 @@
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+body {
+  background-color: lightgrey;
+}
+
+.profile-favorite {
+  height: auto; 
+  width: auto; 
+  max-width: 600px; 
+  max-height: 600px;
+}
+
