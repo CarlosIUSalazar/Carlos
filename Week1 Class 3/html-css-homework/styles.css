@@ -1,11 +1,4 @@
 
-h1 {
-
-}
-
-h2 {
-
-}
 
 body {
   background-color: lightgrey;
@@ -18,3 +11,9 @@ body {
   max-height: 600px;
 }
 
+.profile-favorite {
+  border: 5px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
