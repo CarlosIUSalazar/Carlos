@@ -107,8 +107,12 @@ console.log(greeting("Harry Potter", "Spanish")); // => "Hola, Harry Potter!"
 // that returns “This is not a number.” IF the argument
 // passed in is not a number.
 function isEven(number){
-    if (typeof.number !== "number"){
-        return “This is not a number.”
+    if (typeof(number) !== "number"){
+        return "This is not a number."
+    } else if (number % 2 === 0) {
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -116,27 +120,92 @@ function isEven(number){
 // Test cases:
 console.log(isEven(4)); // should print true
 console.log(isEven(7)); // => false
-
-
+console.log(isEven("number")); // => This is not a number
 
 
 // MEDIUM REQUIREMENTS
-// Medium Requirements
 // Like you did above, finish writing the functions described below. Each must take one number as an argument:
 // isOdd: returns true IF its input is an odd number.
+function isOdd(number){
+if (number % 2 !== 0) {
+    return true;
+} else {
+    return false;
+}
+}
+
 // isPositive: returns true IF its input is positive, and false IF it is not positive.
+function isPositive(number){
+    if (number >= 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // isNegative: returns true IF its input is negative, and false IF it is not negative.
+function isNegative(number){
+    if (number < 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // isZero: returns true IF its input is zero, and false IF it is not zero.
-// The built-in Math object (we’ll learn what objects are at a later time) has a lot of useful mathematical properties and methods (methods are a kind of function…more about that later!). A few useful methods are Math.random, Math.floor andMath.ceil. Look up these functions on MDN to learn how they work, and use them to implement the following:
-// randomNumber: This function should accept a number as its input and return a random number between 0 (inclusive) and number (inclusive).
-// guessMyNumber: This function accepts a number argument and compares it to a random integer (whole number) between 0 (inclusive) and 5 (inclusive). It should return "YES!" if the argument matches the random number and "NO!" if the argument does not match.
+function isPositive(number){
+    if (number === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// The built-in Math object (we’ll learn what objects are at a later time) has a lot of useful mathematical 
+// properties and methods (methods are a kind of function…more about that later!). A few useful methods are Math.random, 
+// Math.floor andMath.ceil. Look up these functions on MDN to learn how they work, and use them to implement the following:
+// randomNumber: This function should accept a number as its input and return a random number between 0 (inclusive) and 
+// number (inclusive).
+function randomNumber(number){
+    let randomNumber = Math.round(Math.random() * number);  // https://stackoverflow.com/questions/45136711/javascript-random-generate-0-or-1-integer You can use Math.round(Math.random()). If Math.random() generates a number less than 0.5 the result will be 0 otherwise it should be 1
+    return (randomNumber);
+}
+
+console.log(randomNumber(6));
+
+// guessMyNumber: This function accepts a number argument and compares it to a random integer (whole number) between 
+// 0 (inclusive) and 5 (inclusive). It should return "YES!" if the argument matches the random number and "NO!" if the 
+// argument does not match.
+
+function guessMyNumber(number){
+    let randomNumber = Math.round(Math.random() * number);
+    if (number === randomNumber){
+        return "YES!";
+    } else {
+        return "NO!";
+    }
+}
+
+console.log(guessMyNumber());
 
 
 // ADVANCED REQUIREMENTS
-// Advanced Requirements
 // For these exercises, you may need to use techniques that we haven’t covered in class.
 
-// Declare a function called randomStopLight. It should create a random number from 0 to 10. If the number generated is less than 3, the function should return "red". If the number generated is between 3 and 6 (inclusive of both), it should return "yellow". If the number generated is 7 or greater, it should return "green".
+// Declare a function called randomStopLight. It should create a random number from 0 to 10. If the number generated is 
+// less than 3, the function should return "red". If the number generated is between 3 and 6 (inclusive of both), it should 
+// return "yellow". If the number generated is 7 or greater, it should return "green".
+function randomSpotLight() {
+    let randomNumber = Math.round(Math.random() * 10);
+    if (randomNumber < 3) {
+        return "red";
+    } else if (randomNumber >= 3 && randomNumber <=6){
+        return "yellow";
+    } else if (randomNumber >= 7){
+        return "green";
+    }
+}
+console.log(randomSpotLight());
 
 // Hint: You may need to use Math.random().
 
