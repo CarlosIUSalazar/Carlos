@@ -57,6 +57,9 @@ body {
   max-height: 250px;
 }
 
+
+/* https://speckyboy.com/html-lists-style/ */
+
 ul {
   list-style: none;
   counter-reset: my-awesome-counter;
