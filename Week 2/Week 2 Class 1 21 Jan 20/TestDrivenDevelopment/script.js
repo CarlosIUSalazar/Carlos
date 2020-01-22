@@ -47,14 +47,15 @@ if (actual === expected){
 
 ///////////////////////////
 //////////////////////////
-
-let expected;
-let actual;
+// Summary
+// Here is what a TDD test case should look like in code:
+//let expected;
+//let actual;
 
 // ... Some code here that you are going to test below.
 
-actual = /* whatever EXPRESSION you are testing */
-expected = /* whatever you expect the EXPRESSION to be */
+actual = 0;/* whatever EXPRESSION you are testing */
+expected = 0;/* whatever you expect the EXPRESSION to be */
 
 if (actual === expected) {
     console.log("Yay! Test PASSED.");
@@ -72,6 +73,8 @@ if (actual === expected) {
 // (string): the first name and last name concatenated together with a space between them.
 function getFullName(firstName, lastName) {
     // Your code here.
+    return firstName + " " + lastName;
+
   }
   
   actual = getFullName("Ken", "Watanabe");
@@ -92,6 +95,14 @@ function getFullName(firstName, lastName) {
 // Returns
 // (string): a greeting (formal or informal) for the given person’s name.
 // Declare your function here.
+
+function simpleGreeting(name,bool){
+    if (bool === true){
+        return "Hello, " + name+"-san.";
+    } else {
+        return "Hello, " + name +".";
+    }
+}
 
 actual = simpleGreeting("Amy", true);
 expected = "Hello, Amy-san.";
@@ -123,6 +134,14 @@ if (actual === expected) {
 
 // (boolean): Whether or not the given first number is greater than the given second number.
 // Declare your function here.
+
+function isGreaterThan(num1,num2){
+    if (num1 > num2){
+        return true;
+     } else {
+         return false;
+     }
+}
 
 actual = isGreaterThan(5, 4);
 expected = true;
@@ -185,6 +204,7 @@ function add(numOne, numTwo) {
 
   // 5 Declare a function called operate.
 
+
 // Arguments
 
 // (string): The arithmetic operator to use: “+”, “-”, “*”, “/”, or “%”.
@@ -195,6 +215,20 @@ function add(numOne, numTwo) {
 // (number): The result of executing the given operator on the given operands, in order.
 
 // Declare your function here.
+
+function operate(string,num1,num2){
+    if (string === "+"){
+        return num1 + num2;
+    } else if (string === "-") {
+          return num1 - num2;
+    } else if (string === "*"){
+          return num1 * num2;
+    } else if (string === "/"){
+        return num1/num2;
+    } else if (string === "%"){
+        return num1 % num2;
+    }
+}
 
 actual = operate("+", 1, 2);
 expected = 3;
@@ -218,6 +252,41 @@ if (actual === expected) {
   console.log("  expected: ", expected);
 }
 
+
+actual = operate("*", 10, 3);
+expected = 30;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = operate("/", 100, 10);
+expected = 10;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = operate("%", 100, 10);
+expected = 0;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+
 // Write your own tests for "*", "/", and "%"
 
 //6 In English, the colors of the rainbow are sometimes listed as:
@@ -237,11 +306,34 @@ if (actual === expected) {
 
 // Declare your function here.
 
+function isRainbowColor(string){
+
+    let string2 = string.toLowerCase();
+    console.log("The color passed is" + string2);
+    if (string2 === "red") {
+        return true;
+    } else if (string2 === "orange") {
+        return true;
+    } else if (string2 === "yellow") {
+        return true;
+    } else if (string2 === "green") {
+        return true;
+    } else if (string2 === "blue") {
+        return true;
+    } else if (string2 === "indigo") {
+        return true;
+    } else if (string2 === "violet") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 actual = isRainbowColor("red");
 expected = true;
 
 if (actual === expected) {
-  console.log("Yay! Test PASSED.");
+  console.log("Yay! red Test PASSED.");
 } else {
   console.error("Test FAILED. Keep trying!");
   console.log("    actual: ", actual);
@@ -252,9 +344,9 @@ actual = isRainbowColor("rEd");
 expected = true;
 
 if (actual === expected) {
-  console.log("Yay! Test PASSED.");
+  console.log("Yay! rEd Test PASSED.");
 } else {
-  console.error("Test FAILED. Keep trying!");
+  console.error("Test rEd FAILED. Keep trying!");
   console.log("    actual: ", actual);
   console.log("  expected: ", expected);
 }
@@ -263,9 +355,20 @@ actual = isRainbowColor("Fred");
 expected = false;
 
 if (actual === expected) {
-  console.log("Yay! Test PASSED.");
+  console.log("Yay! Fred Test PASSED.");
 } else {
   console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = isRainbowColor("inDigo");
+expected = true;
+
+if (actual === expected) {
+  console.log("Yay! Indigo Test PASSED.");
+} else {
+  console.error("Test inDigo FAILED. Keep trying!");
   console.log("    actual: ", actual);
   console.log("  expected: ", expected);
 }
@@ -283,6 +386,16 @@ if (actual === expected) {
 
 // (string): A friendly message that describes the type of the given argument.
 // Declare your function here.
+
+function typeOfFriendly(x){
+
+    let type = typeof x;
+    console.log(type)
+
+    return "The given argument is a " + type +".";
+
+}
+
 
 actual = typeOfFriendly("Hello");
 expected = "The given argument is a string.";
@@ -311,14 +424,20 @@ if (actual === expected) {
 //2 Declare a function called compare.
 
 // Arguments
-
 // (string): The comparison operator to use: “=", "”, “<”, “<=”, etc.
 // (number): The first operand.
 // (number): The second operand.
 // Returns
-
 // (number): The result of executing the given operator on the given operands, in order.
 // Declare your function here.
+
+function compare(string,num1,num2){
+
+    console.log(num1 + string + num2)
+    return (num1 + string + num2);
+
+}
+
 
 actual = compare("===", 1, 1);
 expected = true;
