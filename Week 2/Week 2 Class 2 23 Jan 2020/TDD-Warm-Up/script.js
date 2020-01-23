@@ -9,12 +9,24 @@
 // (number): the second number
 // Returns
 
-// (string): an explanation of how the given numbers compare. There are 3 possibilities:
+// (string): an explanation of how the given numbers compare. 
+//There are 3 possibilities:
 
 // “X is equal to Y”
 // “X is less than Y”
 // “X is greater than Y”
 // Declare your function here.
+
+function compareTwoNumbers(num1,num2){
+
+    if (num1 === num2){
+        return num1 + " is equal to " + num2
+    } else if (num1 < num2) {
+        return num1 + " is less than " + num2
+    } else if (num1 > num2) {
+        return num1 + " is greater than " + num2
+    }
+}
 
 let actual = compareTwoNumbers(1, 1);
 let expected = "1 is equal to 1";
