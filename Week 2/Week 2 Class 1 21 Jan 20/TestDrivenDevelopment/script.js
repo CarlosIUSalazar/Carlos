@@ -18,9 +18,6 @@ if (actual === expected){
     console.log(" epected:", expected);
 }
 
-
-
-
 actual = addTen(100);
 expected = 110;
 
@@ -31,7 +28,6 @@ if (actual === expected){
     console.log("  actual:", actual);
     console.log(" epected:", expected);
 }
-
 
 actual = addTen(-100);
 expected = -90;
@@ -433,8 +429,16 @@ if (actual === expected) {
 
 function compare(string,num1,num2){
 
-    console.log(num1 + string + num2)
-    return (num1 + string + num2);
+    if (string === "==="){
+        return (1 === 1);
+    }    
+    
+    //and so on...
+ 
+
+
+    //console.log("The result is: " + result);
+    //return result;
 
 }
 
@@ -488,6 +492,27 @@ if (actual === expected) {
 
 // (string): the given numbers, concatenated into a single string.
 // Your code here.
+
+
+function concatenateNumbers(num1,num2,num3){
+    let string = '';
+
+    if (num2 === undefined && num3 === undefined){
+        let string = num1.toString();
+        console.log("string is " + string)
+        return string;
+    } else if (num2 !== undefined && num3 === undefined) {
+        console.log("string is " + string)
+        string = num1.toString() + num2.toString();
+        return string;
+    } else {
+        console.log("string is " + string)
+        string = num1.toString() + num2.toString() + num3.toString();
+        return string;
+    }
+}
+
+
 
 actual = concatenateNumbers(7);
 expected = "7";
