@@ -477,8 +477,6 @@ if (actual === expected) {
 
 function deMorganLaw(operand1,operand2){
 
-
-    
 }
 
 // Your code here
