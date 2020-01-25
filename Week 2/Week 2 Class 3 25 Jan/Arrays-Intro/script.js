@@ -3,53 +3,53 @@
 
 //Do the following exercises in the Google Chrome console with your partner.
 
-const instructors = ["Kimiko", "Yan", "Dustin", "Dylan"];
+// const instructors = ["Kimiko", "Yan", "Dustin", "Dylan"];
 
 //1 Write a console.log statement for the above array to print the last value without hard-coding the index. Hint: .length will be useful here.
 
 // 2 What is going on in our code? Fill in the blanks with the output of the statements:
 
-const numbers = [1, 2, 3];
+// let numbers = [1, 2, 3];
 
-console.log(numbers[2]); // ???
-console.log(numbers[0]); // ???
-console.log(numbers[numbers.length - 1]); // ???
+// console.log(numbers[2]); // ???
+// console.log(numbers[0]); // ???
+// console.log(numbers[numbers.length - 1]); // ???
 
-// Read the docs (MDN) closely for the following!
+// // Read the docs (MDN) closely for the following!
 
-console.log(numbers.pop() + numbers.pop()); // ???
+// console.log(numbers.pop() + numbers.pop()); // ???
 
-numbers.unshift(4, 5, 6);
-console.log(numbers.shift()); // ???
+// numbers.unshift(4, 5, 6);
+// console.log(numbers.shift()); // ???
 
-console.log(numbers.length); // ???
+// console.log(numbers.length); // ???
 
-numbers.push(5);
-numbers.push(6);
+// numbers.push(5);
+// numbers.push(6);
 
-console.log(numbers.pop() * numbers.pop()); // ???
-console.log(numbers[0]); // ???
+// console.log(numbers.pop() * numbers.pop()); // ???
+// console.log(numbers[0]); // ???
 
 
-//3 You can also nest arrays inside of arrays. We’ll play around with these a little later. Fill in the following:
+// //3 You can also nest arrays inside of arrays. We’ll play around with these a little later. Fill in the following:
 
-const numbers = [[1, 2, 3], ["one", "two", "three"], ["ichi", "ni", "san"]];
-console.log(numbers[2]); // ???
-console.log(numbers[1][1]); // ???
-console.log(numbers[0][2]); // ???
-console.log(numbers[numbers.length - 1][0]); // ???
-console.log(numbers[2].length); // ???
-console.log(numbers.pop()); // ???
-console.log(numbers[0].push(4)); // ???
-console.log(numbers.length); // ???
+// const numbers = [[1, 2, 3], ["one", "two", "three"], ["ichi", "ni", "san"]];
+// console.log(numbers[2]); // ???
+// console.log(numbers[1][1]); // ???
+// console.log(numbers[0][2]); // ???
+// console.log(numbers[numbers.length - 1][0]); // ???
+// console.log(numbers[2].length); // ???
+// console.log(numbers.pop()); // ???
+// console.log(numbers[0].push(4)); // ???
+// console.log(numbers.length); // ???
 
-//4 Strings also work very similarly to arrays. Fill in the following:
+// //4 Strings also work very similarly to arrays. Fill in the following:
 
-const string = "hello";
-console.log(string[0]); // ???
-console.log(string[3]); // ???
-console.log(string[string.length - 1]); // ???
-console.log(string.length); // ???
+// const string = "hello";
+// console.log(string[0]); // ???
+// console.log(string[3]); // ???
+// console.log(string[string.length - 1]); // ???
+// console.log(string.length); // ???
 
 
 // Exercises
@@ -61,31 +61,39 @@ console.log(string.length); // ???
 
 // When dealing with objects (like arrays), a simple comparison won't work. We'll need to use a built-in function called JSON.stringify to compare the objects.
 // More about that in a future lesson.
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-Basic Requirements
-Don’t forget to put the declarations of expected and actual at the top of your file.
+// if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//   console.log("Yay! Test PASSED.");
+// } else {
+//   console.error("Test FAILED. Keep trying!");
+//   console.log("    actual: ", actual);
+//   console.log("  expected: ", expected);
+// }
 
-Declare a function called numberOfPeople.
+///////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
-Arguments
+// Basic Requirements
+// Don’t forget to put the declarations of expected and actual at the top of your file.
 
-([string]): an array of people’s names
-Returns
+// Declare a function called numberOfPeople.
 
-(number): the length of the given array of names.
+// Arguments
+
+// ([string]): an array of people’s names
+// Returns
+
+// (number): the length of the given array of names.
 
 function numberOfPeople(array) {
   // Your code here
+    return array.length;
+
+
 }
 
-actual = numberOfPeople(["Kimiko", "Yan", "Dustin", "Dylan"]);
-expected = 4;
+let actual = numberOfPeople(["Kimiko", "Yan", "Dustin", "Dylan"]);
+let expected = 4;
 
 if (actual === expected) {
   console.log("Yay! Test PASSED.");
@@ -94,9 +102,11 @@ if (actual === expected) {
   console.log("    actual: ", actual);
   console.log("  expected: ", expected);
 }
-Declare an array called students and fill it with five classmates sitting around you. Invoke numberOfPeople using the array of students as the input!
+// 2 Declare an array called students and fill it with five classmates sitting around you. 
+// Invoke numberOfPeople using the array of students as the input!
 
 // Your code here.
+let students = ["Takashi","Polly","Dylan","Maria","Carlos"];
 
 actual = numberOfPeople(students);
 expected = 5;
@@ -108,9 +118,11 @@ if (actual === expected) {
   console.log("    actual: ", actual);
   console.log("  expected: ", expected);
 }
-Add three more values to your students array using the .push method.
+// 3 Add three more values to your students array using the .push method.
 
 // Your code here.
+
+students.push("Stephen","Thalita","Natasha");
 
 actual = numberOfPeople(students);
 expected = 8;
@@ -122,36 +134,60 @@ if (actual === expected) {
   console.log("    actual: ", actual);
   console.log("  expected: ", expected);
 }
-Declare a function called returnLast.
 
-Arguments
+// 4 Declare a function called returnLast.
 
-([*]): an array of elements
-Returns
+// Arguments
 
-(*): the last item in the given array
+// ([*]): an array of elements
+// Returns
+
+// (*): the last item in the given array
 
 function returnLast(array) {
   // Your code here
+    return array[array.length-1];
+
 }
 
 // Write your own tests
-Instead of using the built-in .push method, let’s write our own. Declare a function push. You are not allowed to use the built-in .push method!
 
-Arguments
+actual = returnLast(["Stephen","Thalita","Natasha"]);
+expected = "Natasha";
 
-([*]): an array of elements
-(*): the value to add to the end of the array
-Returns
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
 
-(number): the new length of the given array. The given array should also have the new given element at the end of it.
+
+// 5 Instead of using the built-in .push method, let’s write our own. Declare a 
+//function push. You are not allowed to use the built-in .push method!
+
+// Arguments
+
+// ([*]): an array of elements
+// (*): the value to add to the end of the array
+// Returns
+
+// (number): the new length of the given array. The given array should also have 
+//the new given element at the end of it.
 
 // Your code here
 
 let array = [1, 2, 3, 4];
 
+function myPush(array,newValue){
+    
+    return array[array.length] = newValue; 
+
+}
+
 // Test that the function returns the correct result.
-actual = push(array, 5);
+actual = myPush(array, 5);
 expected = 5;
 
 if (actual === expected) {
@@ -176,279 +212,23 @@ if (JSON.stringify(actual) === JSON.stringify(expected)) {
   console.log("  expected: ", expected);
 }
 
-// Write your own tests
-Medium Requirements
-Declare a function called hiInTheMiddle. You may need to use something called Math.floor for this one.
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 
-Arguments
+//MEDIUM REQUIREMENTS
+// 1 Declare a function called hiInTheMiddle. You may need to use something called 
+//Math.floor for this one.
 
-([*]): an array of elements
-Returns
+// Arguments
 
-(*): the same array, with or without an added “hi” in the middle.
+// ([*]): an array of elements
+// Returns
 
-It should first check to make sure that the array has an odd number of values (hint: .length needs to be odd). If the length is odd, hiInTheMiddle should replace the value in the middle index, no matter what it may be, with a “hi”. If the length is even, return the array with no changes.
+// (*): the same array, with or without an added “hi” in the middle.
 
-// Your code here
+// It should first check to make sure that the array has an odd number of values 
+//(hint: .length needs to be odd). If the length is odd, hiInTheMiddle should replace 
+//the value in the middle index, no matter what it may be, with a “hi”. If the length 
+//is even, return the array with no changes.
 
-actual = hiInTheMiddle([1, 2, 3, 4, 5]);
-expected = [1, 2, "hi", 4, 5];
-
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-actual = hiInTheMiddle([1, 2, 3, 4]);
-expected = [1, 2, 3, 4];
-
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-Declare a function pop. This one is tricky; you are not allowed use the built-in .pop method, but you should look into using the .splice method.
-
-Arguments
-
-([*]): an array of elements
-Returns
-
-(*): the last element in the given array. The last element is also removed from the given array.
-
-// Your code here
-
-array = [1, 2, 3, 4];
-
-actual = pop(array);
-expected = 4;
-
-if (actual === expected) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-actual = array;
-expected = [1, 2, 3];
-
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-Declare a function unshift. This one is tricky, too. You can’t use the built-in unshift. You should use .splice here as well.
-
-Arguments
-
-([*]): an array of elements
-([*]): a value to add to the front of the array
-Returns
-
-(number): the new length of the array. The given element is added to the given array.
-
-// Your code here
-
-array = [1, 2, 3, 4];
-
-actual = unshift(array, 5);
-expected = 5;
-
-if (actual === expected) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-actual = array;
-expected = [5, 1, 2, 3, 4];
-
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-Declare a function shift. shift should remove the first value in the given array and return the removed value.
-
-Arguments
-
-([*]): an array of elements
-Returns
-
-(*): the first element in the given array. The given element is removed to the given array.
-
-// Your code here
-
-array = [1, 2, 3, 4];
-
-actual = shift(array);
-expected = 1;
-
-if (actual === expected) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-actual = array;
-expected = [2, 3, 4];
-
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-Advanced Requirements
-For these exercises, you may need to use techniques that we haven’t covered in class.
-
-Change the function numberOfPeople to NOT use the built-in .length property.
-
-Declare a function areReverses that checks if two arrays are ‘reverses’ of each other. Take this as an opportunity to look through what built-in methods are available for arrays. There may be an easy way to do this 😉.
-
-Arguments
-
-([*]): the first array of elements
-([*]): the second array of elements
-Returns
-
-(boolean): whether or not the given arrays are reverses of each other
-
-// Your code here
-
-let array1 = [1, 2, 3, 4];
-let array2 = [4, 3, 2, 1];
-
-actual = areReverses(array1, array2);
-expected = true;
-
-if (actual === expected) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-actual = array1;
-expected = [1, 2, 3, 4];
-
-// Make sure the original array is not changed
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-Declare a function called concat. You can’t use the built-in .concat.
-
-Arguments
-
-([*]): the first array of elements
-([*]): the second array of elements
-Returns
-
-([*]): a new array that is contains the merging of the given arrays.
-
-// Your code here
-
-array1 = [1, 2, 3, 4];
-array2 = [4, 3, 2, 1];
-
-actual = concat(array1, array2);
-expected = [1, 2, 3, 4, 4, 3, 2, 1];
-
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-// Make sure the original arrays are not changed
-actual = array1;
-expected = [1, 2, 3, 4];
-
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-actual = array2;
-expected = [4, 3, 2, 1];
-
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-Passing Callbacks to Built-In Methods
-Use the .forEach Array method to print each value in an array.
-
-Use the .forEach Array method to print each number multiplied by 2 in an array.
-
-Nightmare Requirements 😈
-This might be super hard.
-
-Declare a function sort. Don’t use the built-in sort method.
-
-NOTE: there are many ways to sort an array. Choose any way you like.
-
-Arguments
-
-([number]): an array of numbers
-Returns
-
-([number]): an array with the same elements of the given array in ascending order
-
-function sort() {
-  // Your code here.
-}
-
-let arrayToSort = [5, 4, 3, 2, 1];
-
-actual = sort(arrayToSort);
-expected = [1, 2, 3, 4, 5];
-
-// Make sure the result is correct
-if (JSON.stringify(actual) === JSON.stringify(expected)) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-// Make sure the original array is not changed
-if (JSON.stringify(arrayToSort) === JSON.stringify([5, 4, 3, 2, 1])) {
-  console.log("Yay! Test PASSED.");
-} else {
-  console.error("Test FAILED. Keep trying!");
-  console.log("    actual: ", actual);
-  console.log("  expected: ", expected);
-}
-
-// Write more tests
