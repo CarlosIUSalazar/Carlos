@@ -23,20 +23,15 @@
 
 function describeTheWeather(season,temp) {
     // Your code here.
-    if (season === "Spring" && temp ==="warm"){
-        return "The temperature is normal for the season."
-    } else if (season === "Summer" && temp ==="hot"){
-        return "The temperature is normal for the season."
-    } else if (season === "Fall" && temp ==="cool"){
-        return "The temperature is normal for the season."
-    } else if (season === "Winter" && temp ==="cold"){
-        return "The temperature is normal for the season."
+    if ((season === "Spring" && temp ==="warm") || 
+       (season === "Summer" && temp ==="hot") ||
+       (season === "Fall" && temp ==="cool") ||
+       (season === "Winter" && temp ==="cold")) {  
+       return "The temperature is normal for the season."
     } else {
         return "The temperature is unusual for the season."
-    }
-
-    
-  }
+}
+}
   
   let actual = describeTheWeather("Spring", "warm");
   let expected = "The temperature is normal for the season.";
@@ -61,3 +56,13 @@ function describeTheWeather(season,temp) {
   }
   
   // Write more tests to make sure your code is correct.
+  actual = describeTheWeather("Winter", "warm");
+  expected = "The temperature is unusual for the season.";
+  
+  if (actual === expected) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
