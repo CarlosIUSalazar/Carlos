@@ -567,3 +567,76 @@ if (JSON.stringify(actual) === JSON.stringify(expected)) {
   console.log("    actual: ", actual);
   console.log("  expected: ", expected);
 }
+
+
+// Passing Callbacks to Built-In Methods
+// Use the .forEach Array method to print each value in an array.
+
+let arrayX = ["1","2","3"];
+
+arrayX.forEach(x => console.log(x));
+
+// Use the .forEach Array method to print each number multiplied by 2 in an array.
+
+arrayX.forEach(x => console.log(x * 2));
+
+/// NIGHTMARE REQUIREMENTS
+
+// Declare a function sort. Don’t use the built-in sort method.
+
+// NOTE: there are many ways to sort an array. Choose any way you like.
+
+// Arguments
+
+// ([number]): an array of numbers
+// Returns
+
+// ([number]): an array with the same elements of the given array in ascending order
+
+
+
+function sort(array) {
+    // Your code here.
+
+    var done = false;
+    while (!done) {
+      done = true;
+      for (var i = 1; i < array.length; i += 1) {
+        if (array[i - 1] > array[i]) {
+          done = false;
+          var tmp = array[i - 1];
+          array[i - 1] = array[i];
+          array[i] = tmp;
+        }
+      }
+    }
+  
+    return array;
+  }
+
+
+  
+  let arrayToSort = [5, 4, 3, 2, 1];
+  
+  actual = sort(arrayToSort);
+  expected = [1, 2, 3, 4, 5];
+  
+  // Make sure the result is correct
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  // Make sure the original array is not changed
+  if (JSON.stringify(arrayToSort) === JSON.stringify([5, 4, 3, 2, 1])) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  // Write more tests
