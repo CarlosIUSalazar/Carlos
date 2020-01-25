@@ -232,3 +232,338 @@ if (JSON.stringify(actual) === JSON.stringify(expected)) {
 //the value in the middle index, no matter what it may be, with a “hi”. If the length 
 //is even, return the array with no changes.
 
+// Your code here
+
+function hiInTheMiddle(array){
+    if (array.length % 2 ===0){
+        return array;
+    } else {
+        array[Math.floor(array.length/2)] = "hi";
+        return array;
+    } 
+}
+
+actual = hiInTheMiddle([1, 2, 3, 4, 5]);
+expected = [1, 2, "hi", 4, 5];
+
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = hiInTheMiddle([1, 2, 3, 4]);
+expected = [1, 2, 3, 4];
+
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+
+/// 2 Declare a function pop. This one is tricky; you are not allowed use the built-in .pop method, 
+//but you should look into using the .splice method.
+
+// Arguments
+
+// ([*]): an array of elements
+// Returns
+
+// (*): the last element in the given array. The last element is also removed from the given array.
+
+// Your code here
+
+function pop(array){
+
+    let x = array.splice(array.length-1,1);
+    return x[0];
+
+}
+
+array = [1, 2, 3, 4];
+
+actual = pop(array);
+expected = 4;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = array;
+expected = [1, 2, 3];
+
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+
+/////  3 Declare a function unshift. This one is tricky, too. You can’t use the built-in unshift. 
+// You should use .splice here as well.
+
+// Arguments
+
+// ([*]): an array of elements
+// ([*]): a value to add to the front of the array
+// Returns
+
+// (number): the new length of the array. The given element is added to the given array.
+// Your code here
+
+function unshift(array, newItem){
+
+    // let newArr = [newItem];
+    // let x = newArr.concat(array)
+
+    // console.log("result array is ", x)
+    // return x;
+
+    let newArr = array.splice(0,0,newItem);
+    console.log("neawarr is",newArr)
+    return newArr.length;
+
+}
+
+array = [1, 2, 3, 4];
+
+actual = unshift(array, 5);
+expected = 5;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+
+actual = array;
+expected = [5, 1, 2, 3, 4];
+
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+
+/// 4 Declare a function shift. shift should remove the first value in the given array and return the removed value.
+
+// Arguments
+
+// ([*]): an array of elements
+// Returns
+
+// (*): the first element in the given array. The given element is removed to the given array.
+
+
+function shift(array){
+
+    let x  = array[0];
+
+    array.splice(0,1);
+    console.log("new array is", array)
+    return x
+
+}
+
+array = [1, 2, 3, 4];
+
+actual = shift(array);
+expected = 1;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = array;
+expected = [2, 3, 4];
+
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+
+///////  Advanced Requirements
+// For these exercises, you may need to use techniques that we haven’t covered in class.
+
+// Change the function numberOfPeople to NOT use the built-in .length property.
+
+// Declare a function areReverses that checks if two arrays are ‘reverses’ of each other. 
+// Take this as an opportunity to look through what built-in methods are available for arrays. 
+// There may be an easy way to do this 😉.
+
+// Arguments
+
+// ([*]): the first array of elements
+// ([*]): the second array of elements
+// Returns
+
+// (boolean): whether or not the given arrays are reverses of each other
+
+// Your code here
+
+
+function numberOfPeopleAdvanced(array) {
+    // Your code here
+    let count = 0;
+ 
+    for (let i = 0; i<=array.length-1; i++){
+        count++
+    }
+
+    return count;
+  
+  }
+
+actual = numberOfPeopleAdvanced(["Kimiko", "Yan", "Dustin", "Dylan"]);
+expected = 4;
+  
+  if (actual === expected) {
+    console.log("Yay! Advanced Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+
+
+  // 2 Declare a function areReverses that checks if two arrays are ‘reverses’ of each other. 
+//   Take this as an opportunity to look through what built-in methods are available for arrays. 
+//   There may be an easy way to do this 😉.
+
+// Arguments
+
+// ([*]): the first array of elements
+// ([*]): the second array of elements
+// Returns
+
+// (boolean): whether or not the given arrays are reverses of each other
+
+// Your code here
+
+function areReverses(arr1,arr2){
+
+    let arr3 = [];
+    for (let i = arr2.length-1; i>=0; i--) {
+        arr3.push(arr2[i]);
+    }
+
+    if (JSON.stringify(arr1) === JSON.stringify(arr3)){
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+let array1 = [1, 2, 3, 4];
+let array2 = [4, 3, 2, 1];
+
+actual = areReverses(array1, array2);
+expected = true;
+
+if (actual === expected) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = array1;
+expected = [1, 2, 3, 4];
+
+// Make sure the original array is not changed
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+
+/// 3 Declare a function called concat. You can’t use the built-in .concat.
+// Arguments
+
+// ([*]): the first array of elements
+// ([*]): the second array of elements
+// Returns
+
+// ([*]): a new array that is contains the merging of the given arrays.
+
+// Your code here
+
+function concat(arr1,arr2){
+
+    let arr3 = [];
+    for (let i = 0; i< arr1.length; i++){
+        arr3.push(arr1[i]);
+    }
+    for (let i = 0; i< arr2.length; i++){
+        arr3.push(arr2[i]);
+    }
+    return arr3;
+
+}
+
+array1 = [1, 2, 3, 4];
+array2 = [4, 3, 2, 1];
+
+actual = concat(array1, array2);
+expected = [1, 2, 3, 4, 4, 3, 2, 1];
+
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+// Make sure the original arrays are not changed
+actual = array1;
+expected = [1, 2, 3, 4];
+
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
+
+actual = array2;
+expected = [4, 3, 2, 1];
+
+if (JSON.stringify(actual) === JSON.stringify(expected)) {
+  console.log("Yay! Test PASSED.");
+} else {
+  console.error("Test FAILED. Keep trying!");
+  console.log("    actual: ", actual);
+  console.log("  expected: ", expected);
+}
