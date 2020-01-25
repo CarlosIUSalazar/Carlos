@@ -277,8 +277,311 @@ function getMultipliedArray(array, number) {
   
   // Write more tests
 
+//// MEDIUM REQUIREMENTS
+// Medium Requirements
+// Declare a function isSorted.
+
+// Arguments
+
+// ([number])
+// Returns
+
+// (boolean): whether or not the given array is sorted
+
+function isSorted(array) {
+    // Your code here.
+
+    let bool = '';
+    let compare = array[0];
+
+    for (const item of array){
+        if (compare <= item) {
+            bool = true;
+//            compare = item;
+        } else {
+            bool = false;
+            return bool;
+        }
+    }
+    return bool;
+  }
+  
+  actual = isSorted([1, 2, 3]);
+  expected = true;
+  
+  if (actual === expected) {
+    console.log("Yay! Medium 1 Test PASSED.");
+  } else {
+    console.error("Test Medium 1FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  actual = isSorted([3, 2, 3]);
+  expected = false;
+  
+  if (actual === expected) {
+    console.log("Yay! Medium 2 Test PASSED.");
+  } else {
+    console.error("Test Medium 2 FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  // Write more tests
+//2 Declare a function countOccurrences.
+
+// Arguments
+
+// ([*]): an array of elements
+// (string|number|boolean): an element to count the occurrences of (this can be a string, number, or boolean)
+// Returns
+
+// (number): the number of occurances of the given element in the given array
+
+function countOccurrences(array,element) {
+    // Your code here.
+    let count = 0;
+
+    for (const item of array){
+        if (item === element){
+            count++;
+        }
+    }
+    return count;
+  }
+  
+  actual = countOccurrences([1, 2, 3], 2);
+  expected = 1;
+  
+  if (actual === expected) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  actual = countOccurrences([1, 2, 2], 2);
+  expected = 2;
+  
+  if (actual === expected) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  actual = countOccurrences([1, 2, "elephant"], "elephant");
+  expected = 1;
+  
+  if (actual === expected) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  // Write more tests
+
+//3 Declare a function reverse. Don’t use the built-in reverse method.
+
+// Arguments
+
+// ([*])
+// Returns
+
+// ([*]): the given array, with the elements’ order reversed
+function reverse(array) {
+    // Your code here.
+    let resultArr = [];
+
+    for (const item of array){
+        resultArr.unshift(item);
+    }
+
+    return resultArr;
+  }
+  
+  const arrayToReverse = ["eeny", "meeny", "miny", "moe"];
+  
+  actual = reverse(arrayToReverse);
+  expected = ["moe", "miny", "meeny", "eeny"];
+  
+  // Remember, we need to use JSON.stringify to compare arrays (for now)
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log("Yay! Mediu 2 Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  // Make sure the original array is not changed
+  // Remember, we need to use JSON.stringify to compare arrays (for now)
+  if (
+    JSON.stringify(arrayToReverse) ===
+    JSON.stringify(["eeny", "meeny", "miny", "moe"])
+  ) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  // Write more tests
+//4 Declare a function getOperatedArray.
+// Arguments
+
+// ([number])
+// (string): an arithmetic operator to use
+// (number): the operand to use
+// Returns
+
+// ([number]): a new array, whose elements have had the given arithmetic 
+//operator applied with the given operand
+
+function getOperatedArray(array,string,number) {
+    // Your code here.
+    let x = ''
+    let newArr = [];
+    for (const item of array){
+        x = eval(item + string + number)  ///EVAL SHOULD NOT BE USED IS DANGEROUS
+        newArr.push(x);
+    }
+
+    return newArr;
+
+  }
+  
+  actual = getOperatedArray([1, 2, 3], "+", 5);
+  expected = [6, 7, 8];
+  
+  // Remember, we need to use JSON.stringify to compare arrays (for now)
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  actual = getOperatedArray([9, 6, 3], "/", 3);
+  expected = [3, 2, 1];
+  
+  // Remember, we need to use JSON.stringify to compare arrays (for now)
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  // Write more tests
 
 
 
+  /// ADVANCED REQUIREMENTS
+//   These exercises might require techniques that have not been covered in class yet.
+
+// Declare a function callADoctor. Be careful of singular and plural nouns. 
+//I.e. My head hurts! vs. My shoulders hurt!.
+
+// Arguments
+
+// ([string]): an array of “things that hurt”
+// Returns
+
+// (string): what you should say when you meet the doctor
 
 
+function callADoctor(array) {
+    // Your code here.
+    let sentence = '';
+    let isItPlural = false;
+    let pluralBool = false;
+
+    // FIND OUT IF PLURAL
+    let bodypartPluralArr = [];
+    bodypartPluralArr = array[array.length-1].split('');
+    //console.log(bodypartPluralArr);
+    //console.log(bodypartPluralArr[bodypartPluralArr.length-1])
+    if (bodypartPluralArr[bodypartPluralArr.length-1] === "s"){
+        isItPlural = true;
+    }
+
+    //console.log(isItPlural)
+
+    //For single bodyparts non plural
+    if (isItPlural === false && array.length === 1){
+        return `Doctor, doctor! My ${array[0]} hurts!`
+    } 
+    if (isItPlural === true && array.length === 1){
+        return `Doctor, doctor! My ${array[0]} hurt!`
+    } 
+
+
+    //For more than one bodyparts plural
+    for (let i = 0; i<= array.length - 1; i++){
+        if (i === array.length -1 ){
+            sentence += "and " + array[i];
+        } else {
+        sentence += (array[i] + ", ")
+        }
+    }
+    console.log("sentence is ", sentence)
+
+
+    //For more than 1 bodyparts
+    if (isItPlural === false && array.length > 1){
+        console.log(`Doctor, doctor! My ${array[0]} hurts!`);
+        return `Doctor, doctor! My ${array[0]} hurts!`
+    } 
+
+    if (isItPlural === true && array.length > 1){
+        console.log(`Doctor, doctor! My ${array[0]} hurts!`);
+        return `Doctor, doctor! My ${sentence} hurt!`
+    } 
+
+    console.log(sentence);
+
+  }
+  
+  actual = callADoctor(["head"]);
+  expected = "Doctor, doctor! My head hurts!";
+  
+  if (actual === expected) {
+    console.log("Yay! Advanced Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  actual = callADoctor(["shoulders"]);
+  expected = "Doctor, doctor! My shoulders hurt!";
+  
+  if (actual === expected) {
+    console.log("Yay! Advanced Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  actual = callADoctor(["head", "shoulders", "knees", "toes"]);
+  expected = "Doctor, doctor! My head, shoulders, knees, and toes hurt!";
+  
+  if (actual === expected) {
+    console.log("Yay! Advanced Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  // Write more tests
