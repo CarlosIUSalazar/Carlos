@@ -536,10 +536,11 @@ function callADoctor(array) {
     console.log("sentence is ", sentence)
 
 
+
     //For more than 1 bodyparts
     if (isItPlural === false && array.length > 1){
         console.log(`Doctor, doctor! My ${array[0]} hurts!`);
-        return `Doctor, doctor! My ${array[0]} hurts!`
+        return `Doctor, doctor! My ${sentence} hurts!`
     } 
 
     if (isItPlural === true && array.length > 1){
@@ -551,6 +552,7 @@ function callADoctor(array) {
 
   }
   
+
   actual = callADoctor(["head"]);
   expected = "Doctor, doctor! My head hurts!";
   
@@ -578,6 +580,94 @@ function callADoctor(array) {
   
   if (actual === expected) {
     console.log("Yay! Advanced Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  // Write more tests
+  actual = callADoctor(["head", "shoulders", "knees", "nose"]);
+  expected = "Doctor, doctor! My head, shoulders, knees, and nose hurts!";
+  
+  if (actual === expected) {
+    console.log("Yay! Advanced Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+
+///////////////////////////////////////////////////////
+  /// 2 Declare a function deepCount.
+
+// Arguments
+
+// ([*])
+// Returns
+
+// (number): the number of “elements” in the given array. If an element is an 
+// array, the result should count the “elements” in that array
+//debugger;
+function deepCount(array) {
+    // Your code here.
+// let counter = 0;
+
+    // for (let i = 0; i< array.length; i++){
+    //     if (Array.isArray(array[i]) === true){
+    //         console.log("Yes it is array")
+    //         counter += array[i].length;
+    //     } else {
+    //         counter++;
+    //     }
+    // }
+
+    // return counter;
+
+    let newArr = array.flat(Infinity); //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
+    return newArr.length;
+    
+
+  }
+  
+  actual = deepCount([1]);
+  expected = 1;
+  
+  if (actual === expected) {
+    console.log("Yay! Advanced 2 Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  actual = deepCount([1, 3]);
+  expected = 2;
+  
+  if (actual === expected) {
+    console.log("Yay! Advanced 2 Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  actual = deepCount([1, 3, [2, 4]]);
+  expected = 4;
+  
+  if (actual === expected) {
+    console.log("Yay! Advanced 2 Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+  }
+  
+  actual = deepCount(["a", "b", ["c", ["d", "e", ["f"]]]]);
+  expected = 6;
+  
+  if (actual === expected) {
+    console.log("Yay! Advanced 2 Test PASSED.");
   } else {
     console.error("Test FAILED. Keep trying!");
     console.log("    actual: ", actual);
