@@ -9,8 +9,6 @@ console.log(colors);
 for (const color of colors) {
     console.log(color);
 }
-
-
 //FOR OF LOOPS
 // Basic Requirements
 // Don’t forget to put the declarations of expected and actual at the top of your file.
@@ -673,5 +671,5 @@ function deepCount(array) {
     console.log("    actual: ", actual);
     console.log("  expected: ", expected);
   }
-  
+
   // Write more tests
