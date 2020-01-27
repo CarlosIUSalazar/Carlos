@@ -1,8 +1,6 @@
 'use strict'
 // Please don't delete the 'use strict' line above
 
-
-
 const colors = ["red","green","blue"];
 console.log(colors);
 
