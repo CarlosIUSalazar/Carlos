@@ -45,7 +45,7 @@ function test(actual, expected) {
       console.trace();
     }
   }
-
+///
 
 // The function should work as expected
 test(sumArray([1, 2, 3]), 6);
