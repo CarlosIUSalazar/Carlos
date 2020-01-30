@@ -85,11 +85,25 @@ function morseCodeArt(string) {
     for (const item of newArr){
         resultString += morseCode[item] + ' ';
     }
+    let resultNewString = resultString.split('');
+    
+    console.log(resultNewString);
+    resultNewString.pop();
+    console.log(resultNewString);
+
+    finalresultNewString.join('');
+    console.log(resultNewString);
+
+    return finalresultNewString;
+    
     } else {
         for (const item of newArr){
             resultString += morseCode[item];
         }
     }
+
+    
+
 
     return resultString;
 }
