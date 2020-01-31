@@ -179,3 +179,100 @@ let object = {
 for (const charizzard of object){
     console.log(charizzard);
 }
+
+
+
+// //// REVIEW ARRAYS AND OBJECTS
+// // Declare a function getFirstObjectValues.
+
+// // Arguments
+
+// // ([object])
+// // Returns
+
+// // ([*]): an array of all of the values in the first object of the collection
+
+// // Your code here
+
+// function getFirstObjectValues(array){
+
+//     let returnArray = [];
+
+//     let firstObject = array[0];
+
+//     for (const item in firstObject){
+//         returnArray.push(firstObject[item]);
+//     }
+
+//     console.log(returnArray);
+//     return returnArray;
+// }
+
+
+// const collection = [{ a: 1, b: 2 }, { a: 3, b: 3 }, { b: 4 }, { a: 100 }];
+
+// test(getFirstObjectValues(collection), [1, 2]);
+// test(getFirstObjectValues(collection.slice(1)), [3, 3]);
+
+
+// 2 Declare a function getAllValues. You may need to use both kinds of for-loops!
+
+// Arguments
+
+// ([object])
+// Returns
+
+// ([*]): an array of all of the values in all of the given objects
+
+// Your code here
+const collection = [{ a: 1, b: 2 }, { a: 3, b: 3 }, { b: 4 }, { a: 100 }];
+
+// function getAllValues(array) {
+
+//     let returnArray = [];
+
+//     for (const item of array){
+//         for (const key in item){
+//             returnArray.push(item[key]);
+//         }
+//     }
+
+//     console.log(returnArray);
+//     return returnArray;
+// }
+
+// test(getAllValues(collection), [1, 2, 3, 3, 4, 100]);
+// test(getAllValues(collection.slice(1)), [3, 3, 4, 100]);
+
+
+// 3Declare a function selectAllValues.
+
+// Arguments
+
+// ([object])
+// (string): the key to be selected
+// Returns
+
+// ([*]): an array of all of the values that have the given key in all of the given objects
+
+// Your code here
+
+function selectAllValues(array,string){
+
+    let returnArray = [];
+
+    for (const item of array){
+        for (const key in item){
+            if (key === string){
+                returnArray.push(item[key]);
+            }
+        }
+    }
+    console.log(returnArray);
+    return returnArray;
+}
+
+
+test(selectAllValues(collection, "a"), [1, 3, 100]);
+test(selectAllValues(collection, "b"), [2, 3, 4]);
+
