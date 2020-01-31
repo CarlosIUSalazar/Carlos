@@ -42,17 +42,17 @@
 // }
 
 // ///
-function test(actual, expected) {
-    if (JSON.stringify(actual) === JSON.stringify(expected)) {
-      console.log("Yay! Test PASSED.");
-    } else {
-      console.error("Test FAILED. Keep trying!");
-      console.log("    actual: ", actual);
-      console.log("  expected: ", expected);
-      console.trace();
-    }
-  }
-///
+// function test(actual, expected) {
+//     if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//       console.log("Yay! Test PASSED.");
+//     } else {
+//       console.error("Test FAILED. Keep trying!");
+//       console.log("    actual: ", actual);
+//       console.log("  expected: ", expected);
+//       console.trace();
+//     }
+//   }
+// ///
 
 // test(morseCode["t"], "-");
 // test(morseCode["a"], ".-");
@@ -212,109 +212,162 @@ function test(actual, expected) {
 // test(countCharacters("hello"), { h: 1, e: 1, l: 2, o: 1 });
 // test(countCharacters("hello hello"), { h: 2, e: 2, l: 4, o: 2, " ": 1 });
 
-// function test(actual, expected) {
-//     if (JSON.stringify(actual) === JSON.stringify(expected)) {
-//       console.log("Yay! Test PASSED.");
+
+
+
+
+///Medium Requirements
+// Declare a function countWords.
+
+// Hint: You will want to make use of the string method .split. Try the code below to see 
+// how it works.
+
+// Arguments
+
+// (string)
+// Returns
+
+// (object): an object whose keys are the words in the string, and the corresponding values 
+// are the number of occurrences of that word within the string.
+
+// Your code here.
+
+// function countWords(string){
+//   let resultObject = {};
+
+//   let arrayOfStrings = string.split(" ");
+//   console.log("array Of Strings is ",arrayOfStrings)
+
+//   if (arrayOfStrings[0]=== ""){
+//     return resultObject
+//   }
+
+//   for (const item of arrayOfStrings){
+//     if (!(item in resultObject)) {   // Alternativa if (key in object) ////!resultObject.hasOwnProperty(item)  //https://stackoverflow.com/questions/38062258/how-to-check-if-a-key-exists-in-an-object-in-javascript
+//       resultObject[item] = 1;
 //     } else {
-//       console.error("Test FAILED. Keep trying!");
-//       console.log("    actual: ", actual);
-//       console.log("  expected: ", expected);
-//       console.trace();
+//       resultObject[item] += 1; 
 //     }
 //   }
-// ///
 
-// //// REVIEW ARRAYS AND OBJECTS
-// // Declare a function getFirstObjectValues.
+//   console.log(resultObject);
+//   return resultObject;
+// }
 
-// // Arguments
 
-// // ([object])
-// // Returns
 
-// // ([*]): an array of all of the values in the first object of the collection
 
-// // Your code here
 
-// function getFirstObjectValues(array){
+// test(countWords("hello hello"), { hello: 2 });
+// test(countWords("hello Hello"), { hello: 1, Hello: 1 });
+// test(countWords(""), {});
 
-//     let returnArray = [];
 
-//     let firstObject = array[0];
+const pokemons = [
+  {
+    Number: "001",
+    Name: "Bulbasaur",
+    Generation: "Generation I",
+    About:
+      "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",
+    Types: ["Grass", "Poison"],
+  },
+  {
+    Number: "025",
+    Name: "Pikachu",
+    Generation: "Generation I",
+    About:
+      "Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.",
+    Types: ["Electric"],
+  },
+  {
+    Number: "019",
+    Name: "Rattata",
+    Generation: "Generation I",
+    About:
+      "Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives—it will make its nest anywhere.",
+    Types: ["Normal"],
+  },
+];
 
-//     for (const item in firstObject){
-//         returnArray.push(firstObject[item]);
+///Pokemon fun!!!
+// Use the pokemons array from the paired activities above for the following exercises.
+
+// Declare a function getNames.
+
+// Arguments
+
+// ([object]): an array containing all the available pokemons
+// Returns
+
+// (object): an array of the Names of all the given objects.
+
+
+// Your code here.
+// function getNames(array){
+//   let returnArray = [];
+
+//     for(const item of array){
+//       returnArray.push(item["Name"]);
 //     }
 
 //     console.log(returnArray);
 //     return returnArray;
+
+
 // }
+// // the 'pokemons' array must be somewhere above this line in your file.
+// test(getNames(pokemons), ["Bulbasaur", "Pikachu", "Rattata"]);
 
 
-// const collection = [{ a: 1, b: 2 }, { a: 3, b: 3 }, { b: 4 }, { a: 100 }];
+// 2 Declare a function findPokemon.
 
-// test(getFirstObjectValues(collection), [1, 2]);
-// test(getFirstObjectValues(collection.slice(1)), [3, 3]);
-
-
-// 2 Declare a function getAllValues. You may need to use both kinds of for-loops!
+// Hint: This is one of the few times you should consider using ==.
 
 // Arguments
 
-// ([object])
+// ([object]): an array containing all the available pokemons
+// (number): the ‘number’ of the pokemon to retrieve
 // Returns
 
-// ([*]): an array of all of the values in all of the given objects
+// (object): the pokemon whose 'Number" is the given number. If a corresponding pokemon doesn’t exist, returns null
 
-// Your code here
-const collection = [{ a: 1, b: 2 }, { a: 3, b: 3 }, { b: 4 }, { a: 100 }];
+// Note: Since we only have three Pokemon objects in our array, this function will only return a pokemon with the numbers 1, 25, and 19.
 
-// function getAllValues(array) {
+// Your code here.
 
-//     let returnArray = [];
+function findPokemon(array,number){
 
-//     for (const item of array){
-//         for (const key in item){
-//             returnArray.push(item[key]);
-//         }
-//     }
+  let returnArray = [];
 
-//     console.log(returnArray);
-//     return returnArray;
-// }
-
-// test(getAllValues(collection), [1, 2, 3, 3, 4, 100]);
-// test(getAllValues(collection.slice(1)), [3, 3, 4, 100]);
-
-
-// 3Declare a function selectAllValues.
-
-// Arguments
-
-// ([object])
-// (string): the key to be selected
-// Returns
-
-// ([*]): an array of all of the values that have the given key in all of the given objects
-
-// Your code here
-
-function selectAllValues(array,string){
-
-    let returnArray = [];
-
-    for (const item of array){
-        for (const key in item){
-            if (key === string){
-                returnArray.push(item[key]);
-            }
-        }
+  for (const item of array){
+    if(item["Number"] == number){
+      returnArray.push(item)
     }
-    console.log(returnArray);
-    return returnArray;
+  }
+  if (returnArray.length === 0){
+    return null;
+  }
+  
+  console.log("return array is", returnArray);
+  return returnArray[0];
 }
 
+test(findPokemon(pokemons, 1), pokemons[0]);
+test(findPokemon(pokemons, 19), pokemons[2]);
+test(findPokemon(pokemons, 25), pokemons[1]);
+test(findPokemon(pokemons, 1337), null);
 
-test(selectAllValues(collection, "a"), [1, 3, 100]);
-test(selectAllValues(collection, "b"), [2, 3, 4]);
 
+
+
+function test(actual, expected) {
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+    console.trace();
+  }
+}
