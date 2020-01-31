@@ -170,15 +170,15 @@ function test(actual, expected) {
 //     console.log(eevy);
 // }
 
-let object = {
-    1:"a",
-    2:"b",
-    3:"c"
-}
+// let object = {
+//     1:"a",
+//     2:"b",
+//     3:"c"
+// }
 
-for (const charizzard of object){
-    console.log(charizzard);
-}
+// for (const charizzard of object){
+//     console.log(charizzard);
+// }
 
 
 
@@ -225,7 +225,7 @@ for (const charizzard of object){
 // ([*]): an array of all of the values in all of the given objects
 
 // Your code here
-const collection = [{ a: 1, b: 2 }, { a: 3, b: 3 }, { b: 4 }, { a: 100 }];
+// const collection = [{ a: 1, b: 2 }, { a: 3, b: 3 }, { b: 4 }, { a: 100 }];
 
 // function getAllValues(array) {
 
@@ -257,22 +257,56 @@ const collection = [{ a: 1, b: 2 }, { a: 3, b: 3 }, { b: 4 }, { a: 100 }];
 
 // Your code here
 
-function selectAllValues(array,string){
+// function selectAllValues(array,string){
 
-    let returnArray = [];
+//     let returnArray = [];
 
-    for (const item of array){
-        for (const key in item){
-            if (key === string){
-                returnArray.push(item[key]);
-            }
-        }
+//     for (const item of array){
+//         for (const key in item){
+//             if (key === string){
+//                 returnArray.push(item[key]);
+//             }
+//         }
+//     }
+//     console.log(returnArray);
+//     return returnArray;
+// }
+
+
+// test(selectAllValues(collection, "a"), [1, 3, 100]);
+// test(selectAllValues(collection, "b"), [2, 3, 4]);
+
+
+///Medium Requirements
+// These will take a bit of work and a lot of organization! Be patient as you work through these.
+
+// Declare a function swapPairs2.
+
+// Arguments
+
+// (object)
+// Returns
+
+// (object): An object with the given object’s values as keys, and keys as values. If there are duplicate values in the input object, only the first key-value pair should be used and subsequent pairs with the same value discarded.
+
+// Your code here
+
+function swapPairs2(object){
+
+    let returnObject = {};
+
+    for (const key in object){
+        returnObject[object[key]] = key;
     }
-    console.log(returnArray);
-    return returnArray;
+
+    return returnObject;
 }
 
 
-test(selectAllValues(collection, "a"), [1, 3, 100]);
-test(selectAllValues(collection, "b"), [2, 3, 4]);
+const object5 = { a: 1, b: 2, c: 3, d: 1 };
+const object6 = { a: 1, b: 1, c: 1, d: 1 };
 
+// the key-value pair d:1 is discarded because 1 is already used as a key
+test(swapPairs2(object5), { 1: "a", 2: "b", 3: "c" });
+
+test(swapPairs2(object6), { 1: "a" });
