@@ -156,8 +156,8 @@ function counter(num) {
 function createRange(start,end){
     let returnArray = [];
 
-    for(let i = start; i < end; i++){
-        returnArray.push[i];
+    for(let i = start; i <= end; i++){
+        returnArray.push(i);
     }
     return returnArray;
 }
@@ -171,7 +171,64 @@ test(createRange(10, 16), [10, 11, 12, 13, 14, 15, 16]);
 
 
 
-function test(actual, expected) {
+
+
+
+  // 2 Convert the while-loop inside the printCars function into a for-loop. If you 
+  //did this correctly, it will print the same values to the console in the same order.
+
+function printCars() {
+    const cars = ["Toyota", "Mazda", "Mercedes", "BMW", "Hyundai", "Volvo"];
+    
+    for (let i = 0; i < cars.length; i++){
+        console.log(cars[i]);
+    }
+    
+    // let i = 0;    
+    // while (i < cars.length) {
+    //   console.log(cars[i]);
+    //   i++;
+    // }
+  }
+
+printCars();
+
+
+
+// 3 Convert the for loop below into a while loop. Make sure you understand why index 
+// equals (list.length - 1) originally. If you are confused, think about the difference 
+// between the last index of an array and the total length.
+
+// Hint: Note the order that the strings are printing. You will need to make sure they 
+// print in the same order.
+
+const commands = ["Print me last", "Print me second", "Print me first"];
+
+function decrement(list) {
+//   for (let i = list.length - 1; i >= 0; i--) {
+//     console.log(list[i]);
+//   }
+let index = 2;
+
+while(index >= 0){
+    console.log(list[index]);
+    index--;
+}
+
+
+}
+
+//Test case:
+
+decrement(commands);
+// 'Print me first'
+// 'Print me second'
+// 'Print me last'
+
+
+
+
+  function test(actual, expected) {
     if (JSON.stringify(actual) === JSON.stringify(expected)) {
       console.log("Yay! Test PASSED.");
     } else {
@@ -181,3 +238,32 @@ function test(actual, expected) {
       console.trace();
     }
   }
+
+
+  // 4 Declare a function createRangeBySteps.
+
+// Arguments
+
+// (number): start
+// (number): end
+// (number): step
+// Returns
+
+// ([number]): an array with all numbers between the start and the end number, 
+// inclusive, but for every number of steps.
+
+// Your code here
+
+function createRangeBySteps(start,end,step){
+
+    let returnArray = [];
+
+    for (let i = start; i <= end; i += step){
+        returnArray.push(i)
+    }
+    console.log(returnArray);
+    return returnArray;
+}
+
+test(createRangeBySteps(1, 10, 2), [1, 3, 5, 7, 9]);
+test(createRangeBySteps(10, 30, 5), [10, 15, 20, 25, 30]);
