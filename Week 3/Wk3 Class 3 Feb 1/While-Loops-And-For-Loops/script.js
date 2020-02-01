@@ -267,3 +267,74 @@ function createRangeBySteps(start,end,step){
 
 test(createRangeBySteps(1, 10, 2), [1, 3, 5, 7, 9]);
 test(createRangeBySteps(10, 30, 5), [10, 15, 20, 25, 30]);
+
+
+// 5 Declare a function addTogether that takes two arrays of numbers of equal length 
+// as inputs.
+
+// Arguments
+
+// ([number])
+// ([number])
+// Returns
+
+// ([number]): an array with the result of the sum of each corresponding numbers of 
+// the arrays
+
+// Your code here
+
+function addTogether(arr1,arr2){
+
+    let returnArray = [];
+
+    for (let i = 0; i < arr1.length; i++){
+        returnArray.push(arr1[i]+arr2[i]);
+    }
+    return returnArray;
+}
+
+
+test(addTogether([1, 2, 3], [4, 5, 6]), [5, 7, 9]);
+test(addTogether([1, 2, 3], [7, 8, 9]), [8, 10, 12]);
+
+
+// 6 Modify the addTogether function above so that it can take arrays of different 
+// lengths. Use for-loops this time.
+function addTogetherModified(arr1,arr2){
+
+    let returnArray = [];
+
+    let longestArray = [];
+    let shortestArray = [];
+
+    if (arr1.length >= arr2.length){
+        longestArray = arr1;
+        shortestArray = arr2;
+    } else {
+        longestArray = arr2;
+        shortestArray = arr1;
+    }
+
+    // for (let i = 0; i <= arr1.length-1; i++){
+    //     for (let j = 0; j<= arr2.length-1; j++){
+    //         returnArray.push(arr1[i]+arr2[i]);
+    //     }
+    // }
+    
+    for (let i = 0; i < shortestArray.length; i++){
+        
+        longestArray[i] = (shortestArray[i] + longestArray[i])
+        
+        // if (shortestArray[i] === "undefined"){
+        //     returnArray.push(longestArray[i])
+        // } else {
+        //     returnArray.push(longestArray[i] + shortestArray[i])
+        // }
+    }
+
+    return longestArray;
+}
+
+
+
+test(addTogetherModified([1], [4, 5, 6]), [5, 5, 6]);
