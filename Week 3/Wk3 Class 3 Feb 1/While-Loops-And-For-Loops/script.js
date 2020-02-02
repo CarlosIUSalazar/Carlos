@@ -167,13 +167,6 @@
 
 
 
-
-
-
-
-
-
-
 //   // 2 Convert the while-loop inside the printCars function into a for-loop. If you 
 //   //did this correctly, it will print the same values to the console in the same order.
 
@@ -192,8 +185,6 @@
 //   }
 
 // printCars();
-
-
 
 // // 3 Convert the for loop below into a while loop. Make sure you understand why index 
 // // equals (list.length - 1) originally. If you are confused, think about the difference 
@@ -224,8 +215,6 @@
 // // 'Print me first'
 // // 'Print me second'
 // // 'Print me last'
-
-
 
 
   function test(actual, expected) {
@@ -367,19 +356,7 @@ function unique(array){
         }
     }
 
-    // for (let i = 0; i < resultArray.length; i++){
-        
-    //     for(const item of resultArray){
-    //         if (item[i] === resultArray[i])
-    //             exists = true;
-    //     }
-        
-    //     if (exists === false){
-    //         resultArray.push(array[i]);
-    //         exists = true;
-    //     }
 
-    // }
 
     return resultArray;
 }
