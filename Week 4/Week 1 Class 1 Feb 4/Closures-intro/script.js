@@ -76,3 +76,27 @@ function createPasswordProtectedAccount(userChosenPassword) {
 const account = createPasswordProtectedAccount("Test1234"); // Add your initial password in as an argument
 account("8skwob"); // Add the wrong password in as an argument! => "Wrong password. Access denied."
 account("Test1234"); // Now add the correct password in as an argument. => "Correct password. Access granted!"
+
+
+// 2 Your turn! Take a look at the closure below.
+
+// Invoke createDonationAccount and assign its return value to a variable. If you do 
+// this correctly, you will see “The donation account has been created!” printed to your 
+// console.
+
+// Then, invoke it three times. If you do this correctly, you will see “2” printed to 
+// your console by the third time.
+
+function createDonationAccount() {
+  let donations = 0;
+
+  function addDonation() {
+    console.log(donations);
+    donations += 1;
+  }
+  console.log("The donation account has been created!");
+  return addDonation;
+}
+
+const firstAccount = createDonationAccount();
+
