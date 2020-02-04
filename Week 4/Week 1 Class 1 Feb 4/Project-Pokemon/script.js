@@ -95,7 +95,21 @@ test(getAvgMaxCP(), getAvgMaxCPResult);
 
         let returnArray = [];
 
-        
+        for(let item of allPokemon){
+            for(let key in item){
+                if (key === "Resistant"){
+                    for(let item2 of item[key]){
+                        if (item2 === attack){
+                            returnArray.push(item);
+                        }
+                    }
+                }
+            }
+        }
+
+        console.log("Return Array is ", returnArray)
+
+        return returnArray;
 
     }
 
