@@ -49,11 +49,11 @@ function makeMovie(title,director,year,length,rating){
 
 // 3 Make five more movie objects using your factory function and store them in an array called movies.
 
-let movie1 = makeMovie("The Lord of The Rings", "Tolkien", 2002, 180, "R");
-let movie2 = makeMovie("Batman", "Peter Dinklage", 1997, 120, "PG-13");
-let movie3 = makeMovie("Star Wars", "George Lucas", 1977, 90, "PG");
-let movie4 = makeMovie("Once upon a time in Hollywood", "Quentin Tarantino", 2019, 140, "R");
-let movie5 = makeMovie("Terminator 2", "James Cameron", 1991, 120, "R");
+let movie1 = makeMovie("The Lord of The Rings", "Tolkien", 2002, 180, 8.5);
+let movie2 = makeMovie("Batman", "Peter Dinklage", 1997, 120, 7);
+let movie3 = makeMovie("Star Wars", "George Lucas", 1977, 90, 9.2);
+let movie4 = makeMovie("Once upon a time in Hollywood", "Quentin Tarantino", 2019, 140, 8.3);
+let movie5 = makeMovie("Terminator 2", "James Cameron", 1991, 120, 9.9);
 
 console.log(movie1)
 console.log(movie2)
@@ -109,4 +109,31 @@ function averageLength(movies){
 }
 
 console.log("What is the total average lenths of my movies: ", averageLength(movieArray),"mins.");
+
+
 // 6 Declare a function averageRating that accepts an array of movies and returns the average rating.
+
+function averageRating(movies){
+
+    let ratingsArray = [];
+    let ratings = 0;
+
+    for(const item of movies){
+        for(const key in item){
+            if (key === "rating"){
+                ratingsArray.push(item[key])
+            }
+        }
+    }
+
+    for(const item of ratingsArray){
+        ratings += item;
+    }
+
+    return ratings/ratingsArray.length;
+
+}
+
+console.log("Your movies rating average is: ", averageRating(movieArray));
+
+
