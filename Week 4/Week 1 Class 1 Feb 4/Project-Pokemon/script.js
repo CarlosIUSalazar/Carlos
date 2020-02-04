@@ -27,17 +27,81 @@ test(getNames(), getNamesResult);
 
 
 
+//2 Declare a function getPokemonByName that takes a string (the name of the Pokémon) 
+// and returns the correct Pokémon object.
+
+function getPokemonByName(name){
+
+    let returnObject = {}
+
+    for(let item of allPokemon){
+        for(let key in item){
+            if(item[key] === name){
+                returnObject = item;
+            }
+        }
+    }
+
+    return returnObject
+    
+
+}
+console.table(getPokemonByName("Pikachu"));
+console.log(getPokemonByName("Pikachu"));
+
+test(getPokemonByName("Pikachu"), getPokemonByNameResult)
 
 
-// function getPokemonByName(name){
+// 3 Declare a function called getAvgMaxCP that returns the average maximum CP 
+//(combat points) of all Pokémon.
 
 
-// }
+function getAvgMaxCP(){
+
+    let returnResult = [];
+    let someCP = 0;
+
+    for(let item of allPokemon){
+        for (let key in item){
+
+            if (key==="MaxCP"){
+                returnResult.push(item[key]);
+            }
+
+        }
+    }
+
+    console.log("returnResult is " + returnResult)
+
+    for (let item of returnResult){
+        someCP += item;
+    }
+
+    let averageMaxCP = someCP/returnResult.length
+    return averageMaxCP;
+}
+
+// If this test is ALMOST correct, but not exactly, don't worry.
+// Just comment out the test.
+test(getAvgMaxCP(), getAvgMaxCPResult);
 
 
 
+// 4 Declare a function called getResistentPokemon that takes a string argument 
+// attack. getResistentPokemon should return all Pokémon (an array of objects) that 
+// are resistant to the type of attack supplied as an argument.
+
+    function getResistentPokemon(attack){
+
+        let returnArray = [];
+
+        
+
+    }
 
 
+
+test(getResistentPokemon("Fire"), getResistentPokemonResult);
 
 
 
