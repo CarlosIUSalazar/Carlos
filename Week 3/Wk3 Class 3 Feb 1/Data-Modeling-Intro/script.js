@@ -137,3 +137,4 @@ function averageRating(movies){
 console.log("Your movies rating average is: ", averageRating(movieArray));
 
 
+
