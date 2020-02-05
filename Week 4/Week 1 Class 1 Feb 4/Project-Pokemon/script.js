@@ -127,38 +127,104 @@ function getResistentPokemonNames(attack){
 
     let returnArray = [];
 
-        for(let item of allPokemon){
-            for(let key in item){
-                if (key === "Resistant"){
-                    for(let item2 of item[key]){
-                        if (item2 === attack){
-                            returnArray.push(item);
-                        }
+    for(let item of allPokemon){
+        for(let key in item){
+            if (key === "Resistant"){
+                for(let itemResistant of item[key]){
+                    if (itemResistant === attack){
+                        returnArray.push(item);
                     }
                 }
             }
         }
+    }
+    //Creates an array of objects of all pokemons resistent to attack
+    console.log("ppokemons with resistant to attack are: ", returnArray)
+    
+    let returnArrayOfNames = [];
+    for (let item of returnArray){
+            returnArrayOfNames.push(item["Name"])
+    }
+    //takes only the name from the created array above
+    console.log("Pokemons only name ", returnArrayOfNames)
+    return returnArrayOfNames
+}
 
-        console.log("Return Array is ", returnArray)
+// test(getResistentPokemonNames("Ice"), getResistentPokemonNamesResult);
 
-        let returnObject = [];
-        for (let item of returnArray){
-            for (let key in item){
-                returnObject.push(item.Name)
+// 6 Declare a function called getWeaknessCounts that returns an object with each type of weakness and 
+// the number of Pokémon with that weakness.
+
+function getWeaknessCounts(){
+
+    let returnWeaknesses = [];
+
+    for(let item of allPokemon){
+        for (let key in item){
+            returnWeaknesses.push(item["Weaknesses"])
+        }
+    }
+
+    let flatReturnWeaknessesArray = returnWeaknesses.flat();
+
+    var uniqueWeaknessesArray = Array.from(new Set(flatReturnWeaknessesArray))   //https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
+
+
+    let returnWeaknessesObject = {};
+
+    for(let item of uniqueWeaknessesArray){
+        returnWeaknessesObject[item] = 0;
+    }
+
+    console.table("my return weaknesses ARRAY is", uniqueWeaknessesArray)  // ["Fire", "Ice", "Flying", "Psychic", "Water", "Ground", "Rock", "Electric", "Grass", "Fighting", "Poison", "Steel", "Bug"]
+    console.table("my return weaknesses OBJECT is", returnWeaknessesObject)  // {Fire: 0, Ice: 0, Flying: 0, Psychic: 0, Water: 0, …}
+
+    //debugger;
+
+    for(let item of allPokemon){
+        for(let key in item){
+            //console.log(item["Weaknesses"]);
+            if (key === "Weaknesses"){
+            
+            for(let item2 of item[key]){
+                if (item2 === "Fire"){
+                returnWeaknessesObject["Fire"]++;
+                } else if (item2 === "Ice"){
+                    returnWeaknessesObject["Ice"]++;
+                } else if (item2 === "Flying"){
+                    returnWeaknessesObject["Flying"]++;
+                } else if (item2 === "Psychic"){
+                    returnWeaknessesObject["Psychic"]++;
+                } else if (item2 === "Water"){
+                    returnWeaknessesObject["Water"]++;
+                } else if (item2 === "Ground"){
+                    returnWeaknessesObject["Ground"]++;
+                } else if (item2 === "Rock"){
+                    returnWeaknessesObject["Rock"]++;
+                } else if (item2 === "Electric"){
+                    returnWeaknessesObject["Electric"]++;
+                } else if (item2 === "Grass"){
+                    returnWeaknessesObject["Grass"]++;
+                } else if (item2 === "Fighting"){
+                    returnWeaknessesObject["Fighting"]++;
+                } else if (item2 === "Poison"){
+                    returnWeaknessesObject["Poison"]++;
+                } else if (item2 === "Steel"){
+                    returnWeaknessesObject["Steel"]++;
+                } else if (item2 === "Bug"){
+                    returnWeaknessesObject["Bug"]++;
+                } 
+            }
             }
         }
+    }
 
-        return returnObject;
+    console.table("my finished return weaknesses OBJECT is", returnWeaknessesObject)  
+    return returnWeaknessesObject;
 
 }
 
-
-
-test(getResistentPokemonNames("Ice"), getResistentPokemonNamesResult);
-
-
-
-
+test(getWeaknessCounts(), getWeaknessCountsResult);
 
 function test(actual, expected) {
     if (JSON.stringify(actual) === JSON.stringify(expected)) {
@@ -170,3 +236,13 @@ function test(actual, expected) {
       console.trace();
     }
   }
+
+
+  //Medium Requirements
+// Did you know that all arrays come with some built-in methods? There is one called forEach that 
+// can be really handy in place of a for-loop. Read about it here.
+
+// Rewrite getNames so that it uses this special Array.prototype.forEach now instead of a for-loop. 
+// Look at the examples on the MDN page to understand how to use .forEach.
+
+// Rewrite the above functions to use the .forEach method instead of a for-loop.

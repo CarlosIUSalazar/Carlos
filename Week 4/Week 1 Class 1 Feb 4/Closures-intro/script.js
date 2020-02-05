@@ -216,3 +216,23 @@ const subtract5 = subtract(5);
 
 test(subtract5(4), 1);
 test(subtract(10)(8), 2);
+
+
+// Nightmare Requirements 😈
+// This might be super hard.
+
+// Declare a function addCurry. To solve this, you will probably need to use a technique called currying.
+
+// Arguments
+
+// (number)
+// Returns
+
+// (function): a function that can be used to chain multiple calls, or used to retrieve the value().
+
+// You should be able to invoke it once and get the value().
+test(addCurry(1).value(), 1);
+
+// You should be able to chain multiple calls to get an accumulated result.
+test(addCurry(1)(2).value(), 3);
+test(addCurry(1)(2)(3)(4)(5)(6).value(), 21);
