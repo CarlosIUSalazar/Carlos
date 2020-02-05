@@ -113,11 +113,48 @@ test(getAvgMaxCP(), getAvgMaxCPResult);
 
     }
 
-
-
 test(getResistentPokemon("Fire"), getResistentPokemonResult);
 
 
+
+// 5 Declare a function called getResistentPokemonNames that takes a string argument 
+// called attack. getResistentPokemonNames should return an array of the names of the 
+// Pokémon that are resistant to the type of attack passed in. Hint: Can you use the 
+// previously written getResistentPokemon to help you here?
+
+
+function getResistentPokemonNames(attack){
+
+    let returnArray = [];
+
+        for(let item of allPokemon){
+            for(let key in item){
+                if (key === "Resistant"){
+                    for(let item2 of item[key]){
+                        if (item2 === attack){
+                            returnArray.push(item);
+                        }
+                    }
+                }
+            }
+        }
+
+        console.log("Return Array is ", returnArray)
+
+        let returnObject = [];
+        for (let item of returnArray){
+            for (let key in item){
+                returnObject.push(item.Name)
+            }
+        }
+
+        return returnObject;
+
+}
+
+
+
+test(getResistentPokemonNames("Ice"), getResistentPokemonNamesResult);
 
 
 

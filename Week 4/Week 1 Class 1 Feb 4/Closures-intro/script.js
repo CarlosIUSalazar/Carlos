@@ -100,3 +100,48 @@ function createDonationAccount() {
 
 const firstAccount = createDonationAccount();
 
+console.log(firstAccount())
+console.log(firstAccount())
+console.log(firstAccount())
+
+
+
+//  3  We went over this in the lecture, but try to write it by yourself without looking. Declare a 
+// function add that takes a input x. add returns a function that takes an input y. The inner function 
+// returns the value of x added to y.
+
+// Some code to get you started
+
+function add(x) {
+  // Your code here
+
+  //let x = w;
+
+  return function(y){
+    return x + y;
+  }
+
+}
+
+const addFive = add(5);
+test(addFive(1), 6);
+
+
+// 4 The below function works, but what has a major problem. What is it?
+
+
+function makeCounter() {
+  let counter = 0;
+  return function() {
+    counter += 1;
+    return counter;
+  };
+}
+
+const counterA = makeCounter();
+test(counterA(), 1);
+test(counterA(), 2);
+
+const counterB = makeCounter(); // This should get a NEW counter
+test(counterB(), 1);
+test(counterB(), 2);
