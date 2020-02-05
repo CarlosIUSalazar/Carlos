@@ -2,25 +2,25 @@
 // Please don't delete the 'use strict' line above
 
 function test(actual, expected) {
-    if (JSON.stringify(actual) === JSON.stringify(expected)) {
-      console.log("Yay! Test PASSED.");
-    } else {
-      console.error("Test FAILED. Keep trying!");
-      console.log("    actual: ", actual);
-      console.log("  expected: ", expected);
-      console.trace();
-    }
+  if (JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log("Yay! Test PASSED.");
+  } else {
+    console.error("Test FAILED. Keep trying!");
+    console.log("    actual: ", actual);
+    console.log("  expected: ", expected);
+    console.trace();
   }
+}
 
 
-  // 1 What is wrong with the following function? Please fix the code.
+// 1 What is wrong with the following function? Please fix the code.
 
 function addOne(x) { // Parameters should be variable
-    return x + 1;
-  }
-  
-  test(addOne(5), 6);
-  test(addOne(50), 51);
+  return x + 1;
+}
+
+test(addOne(5), 6);
+test(addOne(50), 51);
 
 // 2 For the code below, which is correct, A or B?
 
@@ -117,7 +117,7 @@ function add(x) {
 
   //let x = w;
 
-  return function(y){
+  return function (y) {
     return x + y;
   }
 
@@ -129,10 +129,9 @@ test(addFive(1), 6);
 
 // 4 The below function works, but what has a major problem. What is it?
 
-
 function makeCounter() {
   let counter = 0;
-  return function() {
+  return function () {
     counter += 1;
     return counter;
   };
@@ -145,3 +144,75 @@ test(counterA(), 2);
 const counterB = makeCounter(); // This should get a NEW counter
 test(counterB(), 1);
 test(counterB(), 2);
+
+
+// Medium Requirements
+// 1 Create your own closure. Here is the scenario:
+
+// You are creating a website that doesn’t allow access to some features for children who are under 
+// the age of 13.
+
+// Declare a function that accepts age as an argument.
+// Create an inner function that increases the age by one year every time it is invoked. Then, 
+// if the age is over 13, return true– and if it is under 13, return false.
+// Your code here
+
+function createWebsiteAccount(age) {
+
+  return function () {
+    age++;
+    if (age >= 13) {
+      console.log("age is ", age)
+      return true;
+    } else {
+      console.log("age is ", age)
+      return false;
+    }
+  }
+}
+
+
+const childAccount = createWebsiteAccount(10);
+test(childAccount(), false); // => false
+test(childAccount(), false); // => false
+test(childAccount(), true); // => true (the child is now 13!)
+
+const adultAccount = createWebsiteAccount(33);
+test(adultAccount(), true); // => true (no matter how many times it is invoked)
+
+
+
+// 2 Declare a function product that takes an input x and returns a function. The inner function 
+// should take an input y and return the product of x and y.
+
+// Your code here
+
+function product(x){
+
+  return function(y){
+    return x * y;
+  }
+
+}
+
+const product3 = product(3);
+
+test(product3(4), 12);
+test(product(4)(5), 20);
+
+
+// 3 Declare a function subtract that takes an input x and returns a function. The inner function 
+// should take an input y and return x minus y.
+
+function subtract(x){
+
+  return function(y){
+    return x - y;
+  }
+
+}
+
+const subtract5 = subtract(5);
+
+test(subtract5(4), 1);
+test(subtract(10)(8), 2);
