@@ -263,7 +263,7 @@ function getNamesForEach() {
         returnArray.push(pokemon.Name)
     });
 
-    console.log(returnArray);
+    console.table(returnArray);
     return returnArray;
     
 }
@@ -293,3 +293,5 @@ console.table(getPokemonByNameMedium("Pikachu"));
 console.log(getPokemonByNameMedium("Pikachu"));
 
 test(getPokemonByNameMedium("Pikachu"), getPokemonByNameResult)
+
+console.table(allPokemon)
