@@ -8,10 +8,10 @@ const body = document.body;
 const divElement = document.createElement("div");
 divElement.className = "heading-container";
 divElement.innerText = "Hello World";
-const username = window.prompt("What's your name?");
-localStorage.setItem("username", username);
-document.body.append(divElement);
-window.prompt("Woohoo!");
+//const username = window.prompt("What's your name?");
+//localStorage.setItem("username", username);
+//document.body.append(divElement);
+//window.prompt("Woohoo!");
 
 
 // Don’t know what the code is doing? That’s ok! You can still identify all of the 
@@ -24,11 +24,40 @@ window.prompt("Woohoo!");
 // For the following exercises, you will need to use this object.
 
 const myMathObject = {
-  sum: function(...args) {
-    return args.reduce(arg => arg+=arg)
-  },
-  product: function() {},
-  isEven: function() {},
+    sum: function (...args) {
+        let result = 0;
+
+        for (let item of args) {
+            result += item;
+        }
+
+        console.log(args)
+        console.log(result);
+        return result;
+    },
+
+    product: function (...args) { 
+        let result = 1;
+
+        for (let item of args){
+            result = result * item;
+        }
+        console.log(args)
+        console.log(result);
+        return result;
+
+    },
+
+    isEven: function (...args) {
+        let result = false;
+
+        if (args[0] % 2 === 0){
+            result = true;
+        }
+        console.log(args)
+        return result;
+
+     },
 };
 
 
@@ -45,8 +74,30 @@ const myMathObject = {
 // Here are some example tests. You should write your own for the other exercises.
 test(myMathObject.sum(1), 1);
 test(myMathObject.sum(1, 2, 3), 6);
+test(myMathObject.sum(19283,18475,199999), 237757);
 
 
 // product returns the product of all inputs.
 
+test(myMathObject.product(2, 5), 10);
+test(myMathObject.product(10, 2, 3), 60);
+test(myMathObject.product(19283,18475,199999), 71250328746575);
+
+
 // isEven takes a number and returns true if even and false if odd
+
+test(myMathObject.isEven(1), false);
+test(myMathObject.isEven(2), true);
+test(myMathObject.isEven(19), false);
+
+
+function test(actual, expected) {
+    if (JSON.stringify(actual) === JSON.stringify(expected)) {
+        console.log("Yay! Test PASSED.");
+    } else {
+        console.error("Test FAILED. Keep trying!");
+        console.log("    actual: ", actual);
+        console.log("  expected: ", expected);
+        console.trace();
+    }
+}
