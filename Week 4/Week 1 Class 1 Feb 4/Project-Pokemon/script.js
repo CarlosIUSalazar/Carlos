@@ -246,3 +246,33 @@ function test(actual, expected) {
 // Look at the examples on the MDN page to understand how to use .forEach.
 
 // Rewrite the above functions to use the .forEach method instead of a for-loop.
+
+
+////1 Declare a function getNames that returns an array of all the names of Pokémon in 
+//the data set.
+
+
+// https://stackoverflow.com/questions/33763768/loop-through-array-of-values-with-arrow-function
+
+
+function getNamesForEach() {
+
+    let returnArray = [];
+
+    allPokemon.forEach(function(pokemon) {
+        returnArray.push(pokemon.Name)
+    });
+
+    console.log(returnArray);
+    return returnArray;
+    
+}
+
+
+test(getNamesForEach(), getNamesResult);
+
+
+// someValues.forEach((element, index) => {
+//     console.log(`Current index: ${index}`);
+//     console.log(element);
+// });
