@@ -272,7 +272,24 @@ function getNamesForEach() {
 test(getNamesForEach(), getNamesResult);
 
 
-// someValues.forEach((element, index) => {
-//     console.log(`Current index: ${index}`);
-//     console.log(element);
-// });
+// 2 Medium Declare a function getPokemonByName that takes a string (the name of the 
+// Pokémon) and returns the correct Pokémon object.
+
+function getPokemonByNameMedium(name){
+
+    let returnObject = {}
+
+    allPokemon.forEach(pokemon => {
+        if(pokemon.Name === name){
+            returnObject = pokemon;
+        }
+    })
+
+    console.log(returnObject);
+    return returnObject;
+
+}
+console.table(getPokemonByNameMedium("Pikachu"));
+console.log(getPokemonByNameMedium("Pikachu"));
+
+test(getPokemonByNameMedium("Pikachu"), getPokemonByNameResult)
