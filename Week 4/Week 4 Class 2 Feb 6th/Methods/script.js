@@ -97,9 +97,123 @@ const myMathObject = {
         result = base**exponent;
 
         return result;
-     }
+     },
 
+     ceil: function(number){
+
+        let result = number + 1;   //add 1 to number
+
+        let numberArray = (""+result).split("");  //split number in an array
+        console.log("numberArray", numberArray)
+
+        let tempArray = [];
+
+        for (let item of numberArray){   // push all integers before the . to an array
+            if (item !== "."){
+                tempArray.push(item);
+            } else {
+                break;
+            }
+        }
+
+        console.log("tempArray",tempArray);
+
+        result = parseInt(tempArray);   //convert the string array to number
+        console.log("ceil value is ", result)
+        return result;
+
+    },
+
+    floor: function(number) {
+
+        let numberArray = (""+number).split("");  //split number in an array
+        console.log("numberArray", numberArray)
+        let tempArray = [];
+
+        for (let item of numberArray){   // push all integers before the . to an array
+            if (item !== "."){
+                tempArray.push(item);
+            } else {
+                break;
+            }
+        }
+
+        console.log("tempArray",tempArray);
+
+        let result = parseInt(tempArray);   //convert the string array to number
+        console.log("ceil value is ", result)
+        return result;
+
+    },
+
+    round: function(number){
+
+        let roundUp = false;
+
+        let numberArray = (""+number).split("");
+
+        for (let i = 0; i <= numberArray.length; i++){
+            if (numberArray[i] === "."){
+                if(numberArray[i+1] >=5){
+                    roundUp = true
+                }
+            }
+
+        }
+
+        if (roundUp === true){
+
+            let result = number + 1;   //add 1 to number
+
+            let numberArray = (""+result).split("");  //split number in an array
+            console.log("numberArray", numberArray)
     
+            let tempArray = [];
+    
+            for (let item of numberArray){   // push all integers before the . to an array
+                if (item !== "."){
+                    tempArray.push(item);
+                } else {
+                    break;
+                }
+            }
+    
+            console.log("tempArray",tempArray);
+    
+            result = parseInt(tempArray);   //convert the string array to number
+            console.log("ceil value is ", result)
+            return result;
+
+        } else if (roundUp === false){
+
+            let numberArray = (""+number).split("");  //split number in an array
+            console.log("numberArray", numberArray)
+            let tempArray = [];
+    
+            for (let item of numberArray){   // push all integers before the . to an array
+                if (item !== "."){
+                    tempArray.push(item);
+                } else {
+                    break;
+                }
+            }
+    
+            console.log("tempArray",tempArray);
+    
+            let result = parseInt(tempArray);   //convert the string array to number
+            console.log("ceil value is ", result)
+            return result;
+        }
+
+    },
+
+    primeFactorization: function(number){
+
+        let returnObject = {};
+
+        
+
+    }
 
 };
 
@@ -178,6 +292,42 @@ test(myMathObject.abs(-675843.753489), 675843.753489);
 
 // (number): the result of raising the given base to the given exponent
 
+
+
+/// Advanced Requirements
+// 1 Add a method ceil to myMathObject. You should not use any built-in Math methods.
+
+// Arguments
+
+// (number)
+// Returns
+
+// (number): the smallest integer greater than or equal to the given number
+
+
+
+// 2 Add a method floor to myMathObject. You should not use any built-in Math methods.
+
+// Arguments
+
+// (number)
+// Returns
+
+// (number): the largest integer less than or equal to the given number
+
+
+
+// 3 Add a method round to myMathObject. You should not use any built-in Math methods.
+
+// Arguments
+
+// (number)
+// Returns
+
+// (number): the value of the given number rounded to the nearest integer
+
+
+
 const MIN_BASE = -5;
 const MAX_BASE = 5;
 const MIN_EXPONENT = -5;
@@ -215,6 +365,57 @@ function isNearlyEqual(a, b) {
   }
 }
 
+
+
+
+test(myMathObject.ceil(1.1), 2);
+test(myMathObject.ceil(2.2), 3);
+test(myMathObject.ceil(3.3), 4);
+test(myMathObject.ceil(4.4), 5);
+test(myMathObject.ceil(5.5), 6);
+
+
+test(myMathObject.floor(1.1), 1);
+test(myMathObject.floor(2.2), 2);
+test(myMathObject.floor(3.3), 3);
+test(myMathObject.floor(4.4), 4);
+test(myMathObject.floor(5.5), 5);
+
+
+test(myMathObject.round(1.1), 1);
+test(myMathObject.round(2.2), 2);
+test(myMathObject.round(3.3), 3);
+test(myMathObject.round(4.4), 4);
+test(myMathObject.round(5.5), 6);
+test(myMathObject.round(6.6), 7);
+test(myMathObject.round(7.7), 8);
+
+test(myMathObject.primeFactorization(2), { 2: 1 });
+test(myMathObject.primeFactorization(3), { 3: 1 });
+test(myMathObject.primeFactorization(4), { 2: 2 });
+test(myMathObject.primeFactorization(5), { 5: 1 });
+test(myMathObject.primeFactorization(6), { 2: 1, 3: 1 });
+test(myMathObject.primeFactorization(200560490130), {
+  2: 1,
+  3: 1,
+  5: 1,
+  7: 1,
+  11: 1,
+  13: 1,
+  17: 1,
+  19: 1,
+  23: 1,
+  29: 1,
+  31: 1,
+});
+test(myMathObject.primeFactorization(900719925474099), {
+  3: 1,
+  53: 1,
+  157: 1,
+  1613: 1,
+  2731: 1,
+  8191: 1,
+});
 
 function test(actual, expected) {
     if (JSON.stringify(actual) === JSON.stringify(expected)) {
