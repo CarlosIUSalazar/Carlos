@@ -211,8 +211,6 @@ const myMathObject = {
 
         let returnObject = {};
 
-        
-
     }
 
 };
