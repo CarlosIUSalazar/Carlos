@@ -32,7 +32,10 @@ innerParagraphA.textContent = innerParagraphA.textContent.toUpperCase()
 
 console.log(innerParagraphA.textContent.toUpperCase())
 
+// 4 Read about Query Selectors. Use query selectors to access dom elements using 
+//class names and ids.
 
 for(let item of array2){
     item.textContent = item.textContent.toUpperCase();
 }
+
