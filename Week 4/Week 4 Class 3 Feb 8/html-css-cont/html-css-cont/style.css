@@ -1,0 +1,30 @@
+/* Keep this rule in style.css */
+body {
+    font-size: 200%;
+  }
+  
+  /* Add more rules here */
+
+  h1 {
+    color: blue;
+  }
+
+  p {
+    background-color: yellow;
+  }
+
+  .awesome {
+    font-weight: bold;
+  }
+
+  #d {
+    color:red;
+  }
+
+  .little {
+    font-size: 50%;
+  }
+
+  span {
+    color: green;
+  }
