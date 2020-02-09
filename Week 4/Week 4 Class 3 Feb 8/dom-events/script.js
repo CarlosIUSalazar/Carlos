@@ -23,3 +23,15 @@ const h2element = document.createElement("h2");
 h2element.innerText = "Starring Carlos"
 
 h1.appendChild(h2element)
+
+
+
+// Slide 17  Event Listener   blog.codinghorror.com
+let siteHead = document.getElementsByClassName("site-head")[0];
+
+function theHorror(){ 
+    console.log("The Horror") 
+}
+
+siteHead.addEventListener('click',theHorror);
+
