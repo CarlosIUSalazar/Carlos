@@ -5,11 +5,11 @@
 // Please don't delete the 'use strict' line above
 
 // Your code here
-let resultArray = [];
+let refrigerator = [];
 
 
 function getItemsInRefrigerator(){
-    return resultArray;
+    return refrigerator;
 }
 
 
@@ -18,9 +18,9 @@ test(getItemsInRefrigerator(), []);
 
 function putItemInRefrigerator(item){
 
-    resultArray.push(item);
-    console.log(resultArray)
-    return resultArray;
+    refrigerator.push(item);
+    console.log(refrigerator)
+    return refrigerator;
 
 }
 
@@ -36,13 +36,12 @@ test(getItemsInRefrigerator(), ["milk", "juice"]);
 
 function removeItemFromRefrigerator(itemToRemove){
 
-    for(let i = 0; i<resultArray.length; i++){
-        if (resultArray[i] === itemToRemove){
-            resultArray.splice( resultArray.indexOf(itemToRemove), 1 )  // Removes One element of the array https://www.hostingadvice.com/how-to/javascript-remove-element-array/
+    for(let i = 0; i<refrigerator.length; i++){
+        if (refrigerator[i] === itemToRemove){
+            //refrigerator.splice( refrigerator.indexOf(itemToRemove), 1 )  // Removes One element of the array https://www.hostingadvice.com/how-to/javascript-remove-element-array/
+            refrigerator.splice(i,1);
         }
     }
-
-
 
 }
 
