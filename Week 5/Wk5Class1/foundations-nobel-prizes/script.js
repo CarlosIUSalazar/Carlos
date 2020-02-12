@@ -52,7 +52,6 @@ for (let item in prizes){
 console.log(keys)
 console.log(keys2)
 
-
 // for(let key in nobels){
 //     for(let item in key){
 //         for(let key2 in item){
