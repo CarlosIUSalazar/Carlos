@@ -8,15 +8,17 @@
 
 function doTheThing(arr){
 
-let newArr = arr.filter(element => element <= 5)
+    // let newArray = [];
+    // let newArray = arr.filter(element => element <= 5)
+
+    // newArray = arr.filter(element => element < 6).map(element => element*element)
+
+    // return newArray;
 
 
-    let newArray = [];
-    newArray = arr.filter(element => element < 6);
-
-    newArray = newArray.map(element => element*element)
-
-    return newArray;
+    return arr
+            .filter(num => num <= 5)
+            .map((num) => num*num)
 
 }
 

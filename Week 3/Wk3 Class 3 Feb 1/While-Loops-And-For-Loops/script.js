@@ -338,28 +338,91 @@
 // Your code here
 
 
-function unique(array){
+// function unique(array){
 
-    let resultArray = [];
-    let exists = false;
+//     let resultArray = [];
+//     let exists = false;
 
-    let count = 0;
-    let temp = array[0];
+//     let count = 0;
+//     let temp = array[0];
 
-    for(let i = 0; i<array.length; i++){
+//     for(let i = 0; i<array.length; i++){
 
-        if (temp === array[i]){
-            count++;
-        }
-        if (count === 1){
-            resultArray.push(array[i])
-        }
-    }
+//         if (temp === array[i]){
+//             count++;
+//         }
+//         if (count === 1){
+//             resultArray.push(array[i])
+//         }
+//     }
 
 
 
-    return resultArray;
-}
+//     return resultArray;
+// }
 
-test(unique([1, 1, 1, 1, 1]), []);
-test(unique([1, 3, 4, 5, 2, 4]), [1, 3, 5, 2]);
+// test(unique([1, 1, 1, 1, 1]), []);
+// test(unique([1, 3, 4, 5, 2, 4]), [1, 3, 5, 2]);
+
+
+//
+
+//
+
+
+// Declare a function that will print out a christmasTree!
+
+// Arguments
+
+// (string): a single character
+// (number): the height of the tree
+// Returns
+
+// (string): a string representation of a Christmas tree using the given character and height.
+
+// Your code here
+
+function christmasTree(string, height) {
+  let returnString = '';
+  for(var i=0; i<=height-1; i++){
+    var star = '';
+    //Changed to start high then decrease
+    for(var k = 1; k <= (height-1) - i; k++){
+      //shortened to one space
+      star += " ";
+    };
+    for(var j=0; j<=i; j++) {
+        //Added space so there is an odd number
+        //of symbols and the star above fits
+        //the space
+        star += " "+string;
+    };
+    //Moved into the loop
+    console.log(star);
+    returnString += star;
+  };
+  return returnString;
+};
+
+christmasTree("#",4);
+
+
+const expected1 = `T`;
+test(christmasTree("T", 1), expected1);
+const expected2 = ` +
++ +`;
+test(christmasTree("+", 2), expected2);
+const expected4 = `   
+   #
+  # #
+ # # #
+# # # #`;
+test(christmasTree("#", 4), expected4);
+
+// The newlines look strange in the tests, but the tree looks something like this:
+
+//      T
+//     T T
+//    T T T
+//   T T T T
+//  T T T T T
