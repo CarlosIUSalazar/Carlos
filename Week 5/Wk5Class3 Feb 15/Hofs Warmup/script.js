@@ -10,11 +10,9 @@ function doTheThing(arr){
 
     // let newArray = [];
     // let newArray = arr.filter(element => element <= 5)
-
     // newArray = arr.filter(element => element < 6).map(element => element*element)
 
     // return newArray;
-
 
     return arr
             .filter(num => num <= 5)
